@@ -541,17 +541,9 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:700; line-height:1.08;
 }
 
 /* =========================================================================
-   OUR PRESENCE — static map.jpg background + animated SVG/HTML overlay
+   OUR PRESENCE — displays map.jpg only (image already contains all cities,
+   routes and effects). No overlay, markers, labels, lines or animations.
    ========================================================================= */
-.presence{
-  /* Section-scoped overlay palette — Light mode (default) */
-  --map-line:#3a6ea5; --map-node:#20406b;
-  --map-glow:rgba(58,110,165,.55); --map-halo:rgba(58,110,165,.18);
-}
-:root[data-theme="dark"] .presence{
-  --map-line:#7fb1ec; --map-node:#bcd6f5;
-  --map-glow:rgba(111,160,214,.78); --map-halo:rgba(111,160,214,.26);
-}
 .presence__grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2.2rem,6vw,5rem); align-items:center; }
 .presence h2{ max-width:14ch; }
 .presence__text{ font-size:clamp(1rem,1.2vw,1.1rem); color:var(--muted); margin-top:1.3rem; font-weight:300; max-width:52ch; }
@@ -569,64 +561,18 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:700; line-height:1.08;
 .pcard .k{ display:block; font-family:var(--font-display); font-size:.62rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:.45rem; }
 .pcard .v{ display:block; font-family:var(--font-display); font-weight:600; font-size:1.02rem; color:var(--ink); line-height:1.2; }
 
-/* Map figure — the <img> defines the box & aspect ratio; everything else overlays it */
+/* Map figure — renders map.jpg only, in full (object-fit:contain), responsive. */
 .presence__map{
-  position:relative; border:1px solid var(--line); border-radius:var(--radius-lg);
-  overflow:hidden; background:var(--bg-alt); box-shadow:var(--shadow-sm); isolation:isolate;
+  border:1px solid var(--line); border-radius:var(--radius-lg);
+  overflow:hidden; background:var(--bg-alt); box-shadow:var(--shadow-sm);
 }
-.presence__img{ display:block; width:100%; height:auto; object-fit:contain; }   /* full image, never cropped; auto-adapts to map.jpg size */
-.presence__overlay{ position:absolute; inset:0; z-index:2; pointer-events:none; }
-
-/* City dots (HTML, so they stay perfectly circular at any image size) */
-.cdot{
-  position:absolute; width:9px; height:9px; margin:-4.5px 0 0 -4.5px; border-radius:50%;
-  background:var(--map-node); box-shadow:0 0 0 3px var(--map-halo), 0 0 9px var(--map-glow);
-  opacity:0; transform:scale(.3);
-}
-.presence__map.is-live .cdot{ animation:dotin .55s var(--ease) forwards; }
-@keyframes dotin{ to{ opacity:1; transform:scale(1); } }
-
-/* Discreet city labels */
-.clabel{
-  position:absolute; transform:translateY(-50%); white-space:nowrap; opacity:0;
-  font-family:var(--font-display); font-size:.66rem; font-weight:600; letter-spacing:.02em;
-  color:#eef3fb; background:rgba(9,14,24,.5); border:1px solid rgba(255,255,255,.14);
-  border-radius:6px; padding:2px 7px; -webkit-backdrop-filter:blur(5px); backdrop-filter:blur(5px);
-  transition:opacity .6s var(--ease);
-}
-.clabel--r{ margin-left:11px; }
-.clabel--l{ transform:translate(-100%,-50%); margin-left:-11px; }
-.clabel--key{ font-size:.72rem; color:#fff; background:rgba(32,64,107,.72); border-color:rgba(159,194,237,.5); }
-.presence__map.is-live .clabel{ opacity:1; }
-
-/* Karlsruhe pulsing marker */
-.ka{ position:absolute; width:0; height:0; }
-.ka__core{
-  position:absolute; left:0; top:0; width:13px; height:13px; margin:-6.5px 0 0 -6.5px; border-radius:50%;
-  background:#fff; box-shadow:0 0 0 3px var(--map-node), 0 0 14px var(--map-glow); z-index:2;
-}
-.ka__ring{
-  position:absolute; left:0; top:0; width:13px; height:13px; margin:-6.5px 0 0 -6.5px; border-radius:50%;
-  border:1.5px solid var(--map-line); opacity:0;
-}
-.presence__map.is-live .ka__ring{ animation:kapulse 3.2s ease-out infinite; }
-.presence__map.is-live .ka__ring--2{ animation-delay:1.6s; }
-@keyframes kapulse{ 0%{ transform:scale(1); opacity:.6; } 70%{ opacity:0; } 100%{ transform:scale(4.2); opacity:0; } }
+.presence__img{ display:block; width:100%; height:auto; object-fit:contain; }
 
 .presence__cap{ text-align:center; margin-top:1.3rem; font-size:.82rem; color:var(--muted); }
 
-@media (prefers-reduced-motion:reduce){
-  .cdot{ opacity:1; transform:none; animation:none; }
-  .clabel{ opacity:1; transition:none; }
-  .presence__map.is-live .ka__ring{ animation:none; }
-}
 @media (max-width:1024px){
   .presence__grid{ grid-template-columns:1fr; }
   .presence__map{ max-width:600px; margin-inline:auto; width:100%; }
-}
-@media (max-width:760px){
-  /* keep it clean on small screens: dots + lines + Karlsruhe label only */
-  .clabel:not(.clabel--key){ display:none; }
 }
 @media (max-width:520px){
   .presence__cards{ grid-template-columns:1fr; }
@@ -1129,13 +1075,11 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:700; line-height:1.08;
           </div>
         </div>
 
-        <!-- Right: static map.png background (its own routes) + HTML city dots/labels overlay.
-             Dots, labels and the Karlsruhe marker are generated in JS from the CITIES array
-             at the bottom of the page — tweak a city's x/y % there to align it to the map. -->
+        <!-- Right: the finished Europe map. Renders map.jpg only — the image already
+             contains all cities, routes and effects. No overlay or generated elements. -->
         <figure class="presence__fig reveal reveal--r" style="margin:0;">
-          <div class="presence__map" id="presenceMap">
-            <img class="presence__img" src="./assets/images/map.jpg" alt="Map of Europe showing Enseling Consulting headquartered in Karlsruhe and connected to major cities across the European Union" decoding="async" />
-            <div class="presence__overlay" id="presenceOverlay"></div>
+          <div class="presence__map">
+            <img class="presence__img" src="./assets/images/mapwhite.jpg" alt="Map of Europe — Enseling Consulting, headquartered in Karlsruhe, serving partners across the European Union" decoding="async" />
           </div>
           <figcaption class="presence__cap">Headquartered in Karlsruhe, serving partners across Europe.</figcaption>
         </figure>
@@ -1260,11 +1204,27 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:700; line-height:1.08;
   /* ---- Theme: respect saved choice / system, toggle + persist ---- */
   const saved = (function(){ try { return localStorage.getItem('ec-theme'); } catch(e){ return null; } })();
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  /* Presence map image follows the theme: dark -> map.jpg, light -> mapwhite.jpg.
+     Same dimensions, same element & styles, no animation -> no layout shift.
+     Both are preloaded so the switch is instant with no flash. */
+  const presenceImg = document.querySelector('.presence__img');
+  const MAP_DARK = './assets/images/map.jpg';
+  const MAP_LIGHT = './assets/images/mapwhite.jpg';
+  [MAP_DARK, MAP_LIGHT].forEach(s => { const i = new Image(); i.src = s; });
+  function applyMapTheme(){
+    if (!presenceImg) return;
+    const want = root.getAttribute('data-theme') === 'dark' ? MAP_DARK : MAP_LIGHT;
+    if (presenceImg.getAttribute('src') !== want) presenceImg.setAttribute('src', want);
+  }
+
   root.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+  applyMapTheme();
   document.getElementById('themeToggle').addEventListener('click', () => {
     const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
     try { localStorage.setItem('ec-theme', next); } catch(e){}
+    applyMapTheme();
   });
 
   /* ---- Header glassmorphism on scroll (rAF-throttled) ---- */
@@ -1432,101 +1392,6 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:700; line-height:1.08;
       submitBtn.disabled = false;
     }
   });
-
-  /* ---- Our Presence: build the animated map overlay over images/map.jpg -------
-     Coordinates are PERCENTAGES of the image (x = left%, y = top%), derived from an
-     equirectangular projection over lon[-11..31], lat[34..71]. If a point doesn't sit
-     exactly on your map.jpg, just nudge its x/y here — nothing else needs to change.
-     side: 'r' (label right of dot) | 'l' (label left). key:true = always-visible label. */
-  const CITIES = [
-    { n:'Karlsruhe', x:46.2, y:59.4, key:true, hub:true },
-    { n:'London',     x:25.9, y:52.7, side:'l' },
-    { n:'Paris',      x:31.8, y:59.8, side:'l' },
-    { n:'Amsterdam',  x:37.9, y:50.3, side:'l' },
-    { n:'Brussels',   x:36.5, y:54.5, side:'l' },
-    { n:'Berlin',     x:58.1, y:50.0, side:'r' },
-    { n:'Prague',     x:60.5, y:56.5, side:'r' },
-    { n:'Vienna',     x:65.2, y:61.6, side:'r' },
-    { n:'Milan',      x:48.1, y:69.0, side:'l' },
-    { n:'Rome',       x:56.0, y:78.7, side:'r' },
-    { n:'Madrid',     x:17.4, y:82.7, side:'r' },
-    { n:'Copenhagen', x:56.1, y:41.4, side:'r' },
-    { n:'Stockholm',  x:69.2, y:31.5, side:'r' },
-    { n:'Oslo',       x:51.8, y:30.0, side:'l' },
-    { n:'Helsinki',   x:85.6, y:29.3, side:'l' },
-    { n:'Warsaw',     x:76.2, y:50.7, side:'r' },
-    { n:'Riga',       x:83.6, y:38.0, side:'r' },
-    { n:'Tallinn',    x:85.1, y:31.2, side:'r' },
-    { n:'Vilnius',    x:86.4, y:44.1, side:'r' },
-    { n:'Budapest',   x:71.5, y:63.5, side:'r' },
-    { n:'Bucharest',  x:88.3, y:71.8, side:'l' },
-    { n:'Sofia',      x:81.7, y:76.5, side:'l' },
-    { n:'Athens',     x:82.7, y:89.2, side:'l' }
-  ];
-
-  (function buildPresenceMap(){
-    const mapEl = document.getElementById('presenceMap');
-    const overlay = document.getElementById('presenceOverlay');
-    if (!mapEl || !overlay) return;
-
-    const hub = CITIES.find(c => c.hub) || CITIES[0];
-    const spokes = CITIES.filter(c => !c.hub);
-
-    // Reveal order: nearest cities first, so the markers appear to ripple outward
-    spokes.sort((a,b) => Math.hypot(a.x-hub.x, a.y-hub.y) - Math.hypot(b.x-hub.x, b.y-hub.y));
-
-    const STAGGER = 0.08;       // seconds between consecutive city markers
-
-    spokes.forEach((c, i) => {
-      const delay = 0.2 + i * STAGGER;
-
-      // City dot (HTML)
-      const dot = document.createElement('span');
-      dot.className = 'cdot';
-      dot.style.left = c.x + '%';
-      dot.style.top  = c.y + '%';
-      dot.style.animationDelay = delay.toFixed(2) + 's';
-      overlay.appendChild(dot);
-
-      // City label (HTML)
-      const label = document.createElement('span');
-      label.className = 'clabel ' + (c.side === 'l' ? 'clabel--l' : 'clabel--r') + (c.key ? ' clabel--key' : '');
-      label.textContent = c.n;
-      label.style.left = c.x + '%';
-      label.style.top  = c.y + '%';
-      label.style.transitionDelay = (delay + 0.1).toFixed(2) + 's';
-      overlay.appendChild(label);
-    });
-
-    // Karlsruhe hub: pulsing marker + prominent label
-    const ka = document.createElement('div');
-    ka.className = 'ka';
-    ka.style.left = hub.x + '%';
-    ka.style.top  = hub.y + '%';
-    ka.innerHTML = '<span class="ka__ring"></span><span class="ka__ring ka__ring--2"></span><span class="ka__core"></span>';
-    overlay.appendChild(ka);
-
-    const hubLabel = document.createElement('span');
-    hubLabel.className = 'clabel clabel--key ' + (hub.side === 'l' ? 'clabel--l' : 'clabel--r');
-    hubLabel.textContent = hub.n;
-    hubLabel.style.left = hub.x + '%';
-    hubLabel.style.top  = (hub.y + 5.5) + '%';   // sit just below the marker
-    overlay.appendChild(hubLabel);
-
-    // Start the animation once — only when the map scrolls into view
-    if ('IntersectionObserver' in window) {
-      const ob = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          mapEl.classList.add('is-live');
-          obs.disconnect();               // run only once
-        });
-      }, { threshold: 0.3 });
-      ob.observe(mapEl);
-    } else {
-      mapEl.classList.add('is-live');
-    }
-  })();
 
   /* ---- Footer year ---- */
   document.getElementById('year').textContent = new Date().getFullYear();
