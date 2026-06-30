@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Südfrankreich Landschaft">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f6e7c8"/>
+      <stop offset="45%" stop-color="#e8c79a"/>
+      <stop offset="100%" stop-color="#d9a86f"/>
+    </linearGradient>
+    <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9c8aa6"/>
+      <stop offset="100%" stop-color="#7d6c8c"/>
+    </linearGradient>
+    <linearGradient id="hillMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a7b62"/>
+      <stop offset="100%" stop-color="#6b5d46"/>
+    </linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a6b3d"/>
+      <stop offset="100%" stop-color="#3d4a2a"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="72%" cy="22%" r="35%">
+      <stop offset="0%" stop-color="#fff6e0" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#fff6e0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="2000" fill="url(#sky)"/>
+  <circle cx="1150" cy="430" r="150" fill="#fff4d6" opacity="0.85"/>
+  <rect width="1600" height="2000" fill="url(#sun)"/>
+
+  <!-- distant hills -->
+  <path d="M0 980 C 260 880, 520 940, 800 900 C 1080 860, 1340 930, 1600 880 L1600 2000 L0 2000 Z" fill="url(#hillFar)" opacity="0.85"/>
+  <!-- mid hills -->
+  <path d="M0 1140 C 300 1060, 620 1130, 900 1080 C 1180 1030, 1400 1110, 1600 1060 L1600 2000 L0 2000 Z" fill="url(#hillMid)"/>
+
+  <!-- lavender field rows -->
+  <g fill="url(#field)">
+    <path d="M0 1260 C 400 1200, 1200 1200, 1600 1260 L1600 2000 L0 2000 Z"/>
+  </g>
+  <g stroke="#7c8a55" stroke-width="14" opacity="0.55" fill="none">
+    <path d="M-50 1400 C 500 1330, 1100 1330, 1650 1400"/>
+    <path d="M-50 1520 C 500 1440, 1100 1440, 1650 1520"/>
+    <path d="M-50 1660 C 500 1570, 1100 1570, 1650 1660"/>
+    <path d="M-50 1820 C 500 1720, 1100 1720, 1650 1820"/>
+  </g>
+
+  <!-- cypress trees -->
+  <g fill="#2f3a22">
+    <ellipse cx="240" cy="1180" rx="34" ry="150"/>
+    <ellipse cx="320" cy="1200" rx="28" ry="120"/>
+    <ellipse cx="1320" cy="1170" rx="38" ry="165"/>
+    <ellipse cx="1400" cy="1195" rx="26" ry="110"/>
+  </g>
+
+  <!-- stone farmhouse -->
+  <g>
+    <rect x="700" y="1120" width="220" height="130" fill="#e7d3b0"/>
+    <path d="M690 1120 L810 1055 L930 1120 Z" fill="#b9794f"/>
+    <rect x="755" y="1165" width="42" height="85" fill="#6b5d46"/>
+    <rect x="840" y="1150" width="46" height="46" fill="#9c8a63"/>
+  </g>
+</svg>

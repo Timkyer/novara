@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ============================ SEO ============================ -->
+<title>Enseling Consulting | REACH, Surface Technology &amp; Industrial Strategy</title>
+<meta name="description" content="Strategic consulting for European industrial companies in REACH regulation, Chromium VI, surface technology, electroplating and chemical compliance." />
+<meta name="keywords" content="Enseling Consulting, REACH consulting, Chromium VI authorisation, surface technology, electroplating, galvanik, chemical compliance, regulatory strategy, VECCO, industrial policy, surface finishing" />
+<meta name="author" content="Enseling Consulting" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#080b11" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<link rel="canonical" href="https://www.enseling-consulting.com/" /><!-- canonical placeholder -->
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Enseling Consulting" />
+<meta property="og:title" content="Enseling Consulting | REACH, Surface Technology &amp; Industrial Strategy" />
+<meta property="og:description" content="Strategic consulting for European industrial companies in REACH regulation, Chromium VI, surface technology, electroplating and chemical compliance." />
+<meta property="og:url" content="https://www.enseling-consulting.com/" />
+<meta property="og:locale" content="en" />
+<meta property="og:image" content="./images/herowhite.jpg" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Enseling Consulting | REACH, Surface Technology &amp; Industrial Strategy" />
+<meta name="twitter:description" content="Strategic consulting for European industrial companies in REACH, Chromium VI, surface technology and chemical compliance." />
+<meta name="twitter:image" content="./images/herowhite.jpg" />
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Enseling Consulting",
+  "description": "Strategic consulting for European industrial companies in surface technology, electroplating, REACH regulation, Chromium VI, chemical compliance and industrial transformation.",
+  "areaServed": "Europe",
+  "knowsAbout": ["REACH", "Chromium VI authorisation", "Surface Technology", "Electroplating", "Chemical Compliance", "Regulatory Strategy", "Industrial Policy"],
+  "url": "https://www.enseling-consulting.com/",
+  "employee": [
+    { "@type": "Person", "name": "Tim Enseling", "jobTitle": "Managing Director", "email": "tim.acc444@gmail.com" },
+    { "@type": "Person", "name": "Matthias Enseling", "jobTitle": "Senior Industry Consultant", "email": "matthias.enseling@web.de" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<!-- Preload the default (light) hero photo to protect LCP -->
+<link rel="preload" as="image" href="./images/herowhite.jpg" fetchpriority="high" />
+
+<style>
+/* =========================================================================
+   ENSELING CONSULTING — single-file premium consulting site
+   Light theme by default · Dark mode toggle · no frameworks
+   ========================================================================= */
+
+/* ---------------- Design tokens ---------------- */
+:root{
+  --bg:        #ffffff;
+  --bg-alt:    #f5f6f8;
+  --surface:   #ffffff;
+  --glass:     rgba(255,255,255,.66);
+  --glass-brd: rgba(10,14,20,.10);
+  --ink:       #0a0e14;   /* near black            */
+  --ink-2:     #1c2533;   /* anthracite            */
+  --muted:     #5c6675;   /* secondary text        */
+  --line:      rgba(10,14,20,.10);
+  --line-2:    rgba(10,14,20,.055);
+  --navy:      #16243d;   /* deep navy             */
+  --accent:    #20406b;   /* restrained steel blue */
+  --accent-2:  #3a6ea5;   /* lighter steel blue    */
+  --shadow:    0 30px 70px -40px rgba(10,14,20,.45);
+  --shadow-sm: 0 18px 40px -28px rgba(10,14,20,.40);
+
+  --font-display:'Manrope', system-ui, sans-serif;
+  --font-body:   'Inter', system-ui, sans-serif;
+  --container: 1280px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --t: .5s var(--ease);
+}
+:root[data-theme="dark"]{
+  --bg:        #080b11;
+  --bg-alt:    #0c1118;
+  --surface:   #0e141d;
+  --glass:     rgba(14,20,29,.55);
+  --glass-brd: rgba(255,255,255,.10);
+  --ink:       #eef1f6;
+  --ink-2:     #c4ccd8;
+  --muted:     #8b96a6;
+  --line:      rgba(255,255,255,.12);
+  --line-2:    rgba(255,255,255,.06);
+  --navy:      #0a1322;
+  --accent:    #6fa0d6;
+  --accent-2:  #8fb6e0;
+  --shadow:    0 30px 70px -40px rgba(0,0,0,.8);
+  --shadow-sm: 0 18px 40px -28px rgba(0,0,0,.7);
+}
+
+/* ---------------- Reset ---------------- */
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; scroll-padding-top:90px; }
+body{
+  font-family:var(--font-body); background:var(--bg); color:var(--ink);
+  line-height:1.6; overflow-x:hidden; -webkit-font-smoothing:antialiased;
+  transition:background .6s var(--ease), color .6s var(--ease);
+}
+img,svg{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+ul{ list-style:none; }
+button{ font-family:inherit; cursor:pointer; border:none; background:none; color:inherit; }
+::selection{ background:var(--accent); color:#fff; }
+:focus-visible{ outline:2px solid var(--accent-2); outline-offset:3px; border-radius:4px; }
+
+/* ---------------- Helpers ---------------- */
+.container{ width:100%; max-width:var(--container); margin-inline:auto; padding-inline:clamp(1.25rem,4vw,3.5rem); }
+.section{ padding:clamp(5rem,10vw,8.5rem) 0; position:relative; }
+.section--alt{ background:var(--bg-alt); }
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.7rem; font-family:var(--font-display);
+  font-size:.72rem; font-weight:600; letter-spacing:.26em; text-transform:uppercase; color:var(--accent);
+}
+.eyebrow::before{ content:""; width:30px; height:1px; background:currentColor; opacity:.6; }
+h1,h2,h3,h4{ font-family:var(--font-display); font-weight:700; line-height:1.08; letter-spacing:-.022em; color:var(--ink); }
+.h-display{ font-size:clamp(2.5rem,6.4vw,5rem); font-weight:800; letter-spacing:-.035em; line-height:1.02; }
+.h-section{ font-size:clamp(1.9rem,4.2vw,3.1rem); font-weight:800; }
+.lead{ font-size:clamp(1.02rem,1.3vw,1.18rem); color:var(--muted); max-width:64ch; font-weight:300; }
+.skip-link{ position:absolute; left:-9999px; top:0; z-index:2000; background:var(--ink); color:var(--bg); padding:.7rem 1.2rem; border-radius:0 0 10px 0; font-weight:600; }
+.skip-link:focus{ left:0; }
+
+/* ---------------- Buttons ---------------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
+  font-family:var(--font-display); font-weight:600; font-size:.92rem;
+  padding:.95rem 1.8rem; border-radius:999px; position:relative; white-space:nowrap;
+  transition:transform var(--t), background var(--t), color var(--t), border-color var(--t), box-shadow var(--t);
+}
+.btn svg{ width:15px; height:15px; transition:transform var(--t); }
+.btn:hover svg{ transform:translateX(4px); }
+.btn--solid{ background:var(--ink); color:var(--bg); }
+.btn--solid:hover{ transform:translateY(-3px); box-shadow:var(--shadow-sm); }
+.btn--ghost{ border:1px solid var(--line); color:var(--ink); }
+.btn--ghost:hover{ border-color:var(--ink); transform:translateY(-3px); }
+.btn--full{ width:100%; }
+
+/* =========================================================================
+   HEADER — transparent over hero, glassmorphism on scroll
+   ========================================================================= */
+.header{
+  position:fixed; inset:0 0 auto 0; z-index:1000; padding:1.3rem 0;
+  border-bottom:1px solid transparent;
+  transition:padding var(--t), background var(--t), border-color var(--t), box-shadow var(--t);
+}
+.header.is-scrolled{
+  padding:.7rem 0; background:var(--glass);
+  -webkit-backdrop-filter:blur(20px) saturate(180%); backdrop-filter:blur(20px) saturate(180%);
+  border-bottom:1px solid var(--glass-brd); box-shadow:0 10px 40px -30px rgba(10,14,20,.6);
+}
+.nav{ display:flex; align-items:center; justify-content:space-between; gap:2rem; }
+/* Brand — pure wordmark "Enseling". No icon, no logo, no graphic, no border. */
+.brand{
+  display:inline-flex; align-items:center;
+  font-family:var(--font-body); font-weight:500;
+  font-size:1.42rem; letter-spacing:-.015em; line-height:1;
+  color:var(--ink); transition:color var(--t);
+}
+/* Over the cinematic hero (before scroll) force light brand + nav for contrast.
+   Default theme is light so the daylight photo is bright -> use dark text. */
+.header:not(.is-scrolled) .brand{ color:var(--ink); }
+.header:not(.is-scrolled) .nav__link{ color:var(--ink-2); }
+.header:not(.is-scrolled) .nav__link:hover{ color:var(--ink); }
+:root[data-theme="dark"] .header:not(.is-scrolled) .brand{ color:#fff; }
+:root[data-theme="dark"] .header:not(.is-scrolled) .nav__link{ color:rgba(255,255,255,.82); }
+:root[data-theme="dark"] .header:not(.is-scrolled) .nav__link:hover{ color:#fff; }
+:root[data-theme="dark"] .header:not(.is-scrolled) .theme-toggle{ border-color:rgba(255,255,255,.3); }
+:root[data-theme="dark"] .header:not(.is-scrolled) .burger span{ background:#fff; }
+
+.nav__menu{ display:flex; align-items:center; gap:1.9rem; }
+.nav__link{ font-size:.9rem; font-weight:500; color:var(--ink-2); position:relative; transition:color var(--t); }
+.nav__link::after{ content:""; position:absolute; left:0; bottom:-5px; width:100%; height:1px; background:var(--accent); transform:scaleX(0); transform-origin:left; transition:transform var(--t); }
+.nav__link:hover{ color:var(--ink); }
+.nav__link:hover::after,.nav__link.is-active::after{ transform:scaleX(1); }
+
+.nav__right{ display:flex; align-items:center; gap:1.1rem; }
+.theme-toggle{ width:38px; height:38px; border-radius:50%; border:1px solid var(--line); display:grid; place-items:center; transition:border-color var(--t), transform var(--t); }
+.theme-toggle:hover{ border-color:var(--ink); transform:rotate(18deg); }
+.theme-toggle svg{ width:17px; height:17px; }
+.theme-toggle .moon{ display:none; }
+:root[data-theme="dark"] .theme-toggle .sun{ display:none; }
+:root[data-theme="dark"] .theme-toggle .moon{ display:block; }
+.nav__cta{ font-family:var(--font-display); font-weight:600; font-size:.88rem; padding:.6rem 1.35rem; border-radius:999px; background:var(--ink); color:var(--bg); transition:transform var(--t), box-shadow var(--t); }
+.nav__cta:hover{ transform:translateY(-2px); box-shadow:var(--shadow-sm); }
+
+.burger{ display:none; flex-direction:column; gap:6px; padding:6px; z-index:1100; }
+.burger span{ width:25px; height:2px; background:var(--ink); border-radius:2px; transition:transform var(--t), opacity var(--t); }
+.burger.is-open span:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+.burger.is-open span:nth-child(2){ opacity:0; }
+.burger.is-open span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
+
+/* =========================================================================
+   HERO — theme-aware photo that DISSOLVES into the page background on every edge.
+   ========================================================================= */
+.hero{
+  position:relative; min-height:100vh; display:flex; align-items:center;
+  overflow:hidden; isolation:isolate; background:var(--hero-bg); color:#fff;
+  transition:background var(--t), color var(--t);
+}
+.hero__bg{
+  position:absolute; inset:0; z-index:0;
+  background-size:cover; background-position:center center; background-repeat:no-repeat;
+  -webkit-mask:
+    linear-gradient(to right,  transparent 0%, #000 5%, #000 95%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 4%, #000 94%, transparent 100%);
+  -webkit-mask-composite:source-in;
+          mask:
+    linear-gradient(to right,  transparent 0%, #000 5%, #000 95%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 4%, #000 94%, transparent 100%);
+          mask-composite:intersect;
+  will-change:opacity; transition:opacity .5s var(--ease);
+}
+.hero__bg--dark { background-image:url("./images/hero.jpg"); }
+.hero__bg--light{ background-image:url("./images/herowhite.jpg"); }
+
+:root{ --hero-bg:#ffffff; }
+.hero__bg--dark { opacity:0; }
+.hero__bg--light{ opacity:1; }
+:root[data-theme="dark"]{ --hero-bg:#05070A; }
+:root[data-theme="dark"] .hero__bg--dark { opacity:1; }
+:root[data-theme="dark"] .hero__bg--light{ opacity:0; }
+
+/* Light-mode hero copy = dark text on bright photo; dark-mode keeps white treatment. */
+:root:not([data-theme="dark"]) .hero{ color:var(--ink); }
+:root:not([data-theme="dark"]) .hero .eyebrow{ color:var(--accent); }
+:root:not([data-theme="dark"]) .hero__title{ color:var(--ink); }
+:root:not([data-theme="dark"]) .hero__title .grad{
+  background:linear-gradient(120deg,#1c2533,#3a6ea5);
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+}
+:root:not([data-theme="dark"]) .hero__sub{ color:var(--ink-2); }
+:root:not([data-theme="dark"]) .hero .btn--solid{ background:var(--ink); color:#fff; }
+:root:not([data-theme="dark"]) .hero .btn--ghost{ border-color:rgba(10,14,20,.32); color:var(--ink); }
+:root:not([data-theme="dark"]) .hero .btn--ghost:hover{ border-color:var(--ink); background:rgba(10,14,20,.06); }
+:root:not([data-theme="dark"]) .hero__trust li{ border-color:rgba(10,14,20,.14); color:var(--ink-2); background:rgba(255,255,255,.5); }
+:root:not([data-theme="dark"]) .hero__trust li svg{ color:var(--accent); }
+:root:not([data-theme="dark"]) .hero__cue{ color:var(--muted); }
+:root:not([data-theme="dark"]) .hero__cue i{ background:linear-gradient(var(--accent), transparent); }
+
+.hero__inner{ position:relative; z-index:1; padding-block:9rem 7rem; max-width:1000px; }
+.hero__eyebrow{ margin-bottom:1.8rem; }
+.hero .eyebrow{ color:#9fc2ed; }
+.hero__title{ margin-bottom:1.6rem; color:#fff; max-width:17ch; }
+.hero__title .grad{ background:linear-gradient(120deg, #ffffff, #9fc2ed); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+.hero__sub{ font-size:clamp(1.05rem,1.5vw,1.3rem); color:rgba(255,255,255,.82); max-width:62ch; margin-bottom:2.4rem; font-weight:300; }
+.hero__actions{ display:flex; flex-wrap:wrap; gap:1rem; }
+.hero .btn--solid{ background:#fff; color:#0a0e14; }
+.hero .btn--ghost{ border-color:rgba(255,255,255,.42); color:#fff; }
+.hero .btn--ghost:hover{ border-color:#fff; background:rgba(255,255,255,.1); }
+/* Trust indicators */
+.hero__trust{ display:flex; flex-wrap:wrap; gap:.7rem; margin-top:3rem; padding-top:0; }
+.hero__trust li{
+  display:inline-flex; align-items:center; gap:.55rem; font-size:.82rem; font-weight:500;
+  padding:.5rem 1rem; border-radius:999px; border:1px solid rgba(255,255,255,.24);
+  color:rgba(255,255,255,.92); background:rgba(255,255,255,.06);
+  -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+}
+.hero__trust li svg{ width:15px; height:15px; color:#9fc2ed; flex-shrink:0; }
+.hero__cue{ position:absolute; bottom:1.8rem; left:50%; transform:translateX(-50%); z-index:1; font-size:.64rem; letter-spacing:.25em; text-transform:uppercase; color:rgba(255,255,255,.6); display:flex; flex-direction:column; align-items:center; gap:.5rem; }
+.hero__cue i{ width:1px; height:44px; background:linear-gradient(#9fc2ed, transparent); animation:cue 2.2s ease-in-out infinite; }
+@keyframes cue{ 0%,100%{ opacity:.3; transform:scaleY(.6);} 50%{ opacity:1; transform:scaleY(1);} }
+
+/* =========================================================================
+   REVEAL animations
+   ========================================================================= */
+.reveal{ opacity:0; transform:translateY(34px); transition:opacity .9s var(--ease), transform .9s var(--ease); }
+.reveal.in{ opacity:1; transform:none; }
+.reveal--l{ transform:translateX(-42px); }
+.reveal--r{ transform:translateX(42px); }
+.reveal--l.in,.reveal--r.in{ transform:none; }
+@media (prefers-reduced-motion:reduce){
+  .reveal{ opacity:1!important; transform:none!important; transition:none; }
+  html{ scroll-behavior:auto; }
+  .hero__cue i{ animation:none; }
+}
+
+/* ---------------- Section heading block ---------------- */
+.head{ max-width:780px; margin-bottom:3.4rem; }
+.head--center{ margin-inline:auto; text-align:center; }
+.head--center .eyebrow{ justify-content:center; }
+.head--center .lead{ margin-inline:auto; }
+.head .eyebrow{ margin-bottom:1.1rem; }
+.head .lead{ margin-top:1.2rem; }
+
+/* =========================================================================
+   POSITIONING / WHO WE HELP — 3 problem→action→result cards
+   ========================================================================= */
+.who-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; }
+.who{
+  display:flex; flex-direction:column; padding:2rem 1.8rem; border-radius:var(--radius-lg);
+  background:var(--surface); border:1px solid var(--line); position:relative; overflow:hidden;
+  transition:transform var(--t), box-shadow var(--t), border-color var(--t);
+}
+.who::before{ content:""; position:absolute; inset:0 0 auto 0; height:3px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); opacity:0; transition:opacity var(--t); }
+.who:hover{ transform:translateY(-7px); box-shadow:var(--shadow); border-color:color-mix(in srgb, var(--accent) 38%, transparent); }
+.who:hover::before{ opacity:1; }
+.who__no{ font-family:var(--font-display); font-weight:800; font-size:.8rem; letter-spacing:.16em; color:var(--accent); }
+.who h3{ font-size:1.3rem; margin:.6rem 0 1.4rem; }
+.who dl{ display:grid; gap:1rem; }
+.who dt{ font-family:var(--font-display); font-size:.68rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:.25rem; }
+.who dd{ font-size:.92rem; color:var(--ink-2); }
+.who dd.is-result{ color:var(--ink); font-weight:500; }
+
+/* =========================================================================
+   SERVICES — detailed premium offer cards
+   ========================================================================= */
+.svc-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.1rem; }
+.svc{
+  position:relative; padding:2.1rem 2rem; border-radius:var(--radius-lg);
+  background:var(--surface); border:1px solid var(--line); overflow:hidden;
+  display:flex; flex-direction:column; transition:transform var(--t), box-shadow var(--t), border-color var(--t);
+}
+.svc::after{ content:""; position:absolute; inset:0; background:radial-gradient(120% 90% at 100% 0%, rgba(58,110,165,.10), transparent 55%); opacity:0; transition:opacity var(--t); pointer-events:none; }
+.svc:hover{ transform:translateY(-6px); box-shadow:var(--shadow); border-color:color-mix(in srgb, var(--accent) 40%, transparent); }
+.svc:hover::after{ opacity:1; }
+.svc__head{ display:flex; align-items:baseline; gap:1rem; margin-bottom:1rem; position:relative; }
+.svc__no{ font-family:var(--font-display); font-weight:800; font-size:1.15rem; color:var(--accent); line-height:1; }
+.svc h3{ font-size:1.22rem; }
+.svc__problem{ font-size:.92rem; color:var(--muted); margin-bottom:1.4rem; position:relative; }
+.svc__rows{ display:grid; gap:.85rem; padding-top:1.3rem; border-top:1px solid var(--line); position:relative; }
+.svc__row{ display:grid; grid-template-columns:9.5rem 1fr; gap:1rem; align-items:start; }
+.svc__row dt{ font-family:var(--font-display); font-size:.66rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); padding-top:.15rem; }
+.svc__row dd{ font-size:.9rem; color:var(--ink-2); }
+.svc__row dd strong{ font-weight:600; color:var(--ink); }
+.svc__row--out dd{ color:var(--ink); font-weight:500; }
+.svc__row--not dd{ color:var(--muted); }
+@media (max-width:520px){ .svc__row{ grid-template-columns:1fr; gap:.2rem; } }
+
+/* =========================================================================
+   REGULATORY EXCELLENCE — dark glass block
+   ========================================================================= */
+.regulatory{ background:var(--navy); color:#fff; overflow:hidden; }
+.regulatory::before{ content:""; position:absolute; inset:0; background:
+  radial-gradient(60% 60% at 85% 0%, rgba(111,160,214,.25), transparent 60%),
+  linear-gradient(transparent, rgba(0,0,0,.2)); pointer-events:none; }
+.regulatory .eyebrow{ color:var(--accent-2); }
+.reg__grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,6vw,5rem); align-items:center; position:relative; }
+.regulatory h2{ color:#fff; }
+.regulatory .lead{ color:rgba(255,255,255,.72); margin-top:1.2rem; }
+.reg__tags{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:2rem; }
+.reg__tags span{ font-size:.82rem; font-weight:500; padding:.5rem 1rem; border:1px solid rgba(255,255,255,.2); border-radius:999px; color:rgba(255,255,255,.85); transition:border-color var(--t), background var(--t); }
+.reg__tags span:hover{ border-color:var(--accent-2); background:rgba(111,160,214,.12); }
+.reg__panel{ border:1px solid rgba(255,255,255,.14); border-radius:var(--radius-lg); padding:2rem; background:rgba(255,255,255,.04); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); }
+.reg__item{ display:flex; gap:1.2rem; padding:1.05rem 0; border-bottom:1px solid rgba(255,255,255,.1); }
+.reg__item:last-child{ border-bottom:none; padding-bottom:0; }
+.reg__item:first-child{ padding-top:0; }
+.reg__item .n{ font-family:var(--font-display); font-weight:800; font-size:1.3rem; color:var(--accent-2); line-height:1; min-width:2.4rem; }
+.reg__item h4{ color:#fff; font-size:1.02rem; }
+.reg__item p{ font-size:.86rem; color:rgba(255,255,255,.62); margin-top:.2rem; }
+/* Light mode: blends into white page */
+:root:not([data-theme="dark"]) .regulatory{ background:#ffffff; color:var(--ink); }
+:root:not([data-theme="dark"]) .regulatory::before{
+  background:
+    radial-gradient(60% 60% at 85% 0%, rgba(58,110,165,.08), transparent 60%),
+    linear-gradient(transparent, rgba(10,14,20,.025));
+}
+:root:not([data-theme="dark"]) .regulatory .eyebrow{ color:var(--accent); }
+:root:not([data-theme="dark"]) .regulatory h2{ color:var(--ink); }
+:root:not([data-theme="dark"]) .regulatory .lead{ color:var(--muted); }
+:root:not([data-theme="dark"]) .reg__tags span{ border-color:var(--line); color:var(--ink-2); }
+:root:not([data-theme="dark"]) .reg__tags span:hover{ border-color:var(--accent); background:rgba(32,64,107,.06); }
+:root:not([data-theme="dark"]) .reg__panel{ border-color:var(--line); background:var(--bg-alt); -webkit-backdrop-filter:none; backdrop-filter:none; }
+:root:not([data-theme="dark"]) .reg__item{ border-bottom-color:var(--line); }
+:root:not([data-theme="dark"]) .reg__item .n{ color:var(--accent); }
+:root:not([data-theme="dark"]) .reg__item h4{ color:var(--ink); }
+:root:not([data-theme="dark"]) .reg__item p{ color:var(--muted); }
+
+/* =========================================================================
+   PROCESS — 5-step timeline
+   ========================================================================= */
+.steps{ display:grid; grid-template-columns:repeat(5,1fr); gap:1rem; position:relative; }
+.steps::before{ content:""; position:absolute; left:0; right:0; top:18px; height:1px; background:var(--line); z-index:0; }
+.step{ position:relative; z-index:1; }
+.step__no{
+  width:38px; height:38px; border-radius:50%; display:grid; place-items:center;
+  font-family:var(--font-display); font-weight:800; font-size:.9rem; color:#fff;
+  background:linear-gradient(150deg, var(--accent-2), var(--navy)); margin-bottom:1.2rem;
+  box-shadow:0 0 0 6px var(--bg); transition:transform var(--t);
+}
+.step:hover .step__no{ transform:translateY(-3px) scale(1.06); }
+.step h4{ font-size:1.04rem; margin-bottom:.5rem; }
+.step p{ font-size:.86rem; color:var(--muted); margin-bottom:.9rem; }
+.step__meta{ display:flex; flex-direction:column; gap:.35rem; }
+.step__meta span{ font-size:.74rem; color:var(--ink-2); display:flex; gap:.45rem; align-items:flex-start; }
+.step__meta span b{ font-family:var(--font-display); font-size:.6rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); padding-top:.12rem; min-width:3.6rem; }
+@media (max-width:900px){
+  .steps{ grid-template-columns:1fr; gap:0; }
+  .steps::before{ left:18px; right:auto; top:0; bottom:0; width:1px; height:auto; }
+  .step{ padding:0 0 2rem 3.4rem; }
+  .step:last-child{ padding-bottom:0; }
+  .step__no{ position:absolute; left:0; top:0; margin-bottom:0; }
+}
+
+/* =========================================================================
+   INDUSTRIES — target-group cards
+   ========================================================================= */
+.ind-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; }
+.ind{
+  padding:1.8rem 1.6rem; border-radius:var(--radius); background:var(--surface);
+  border:1px solid var(--line); transition:transform var(--t), box-shadow var(--t), border-color var(--t);
+}
+.ind:hover{ transform:translateY(-6px); box-shadow:var(--shadow-sm); border-color:color-mix(in srgb, var(--accent) 36%, transparent); }
+.ind__ic{ width:34px; height:34px; color:var(--accent); margin-bottom:1rem; }
+.ind__ic svg{ width:100%; height:100%; stroke-width:1.5; }
+.ind h3{ font-size:1.08rem; margin-bottom:.7rem; }
+.ind dt{ font-family:var(--font-display); font-size:.62rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:.2rem; }
+.ind dd{ font-size:.87rem; color:var(--ink-2); margin-bottom:.7rem; }
+.ind dd:last-child{ margin-bottom:0; }
+
+/* =========================================================================
+   PROOF / CREDIBILITY + CASE STUDY FRAMEWORK
+   ========================================================================= */
+.proof__grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-bottom:3.4rem; }
+.proof__item{ display:flex; gap:1rem; padding:1.5rem 1.4rem; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); transition:transform var(--t), border-color var(--t); }
+.proof__item:hover{ transform:translateY(-4px); border-color:color-mix(in srgb, var(--accent) 36%, transparent); }
+.proof__item svg{ width:22px; height:22px; color:var(--accent); flex-shrink:0; margin-top:.1rem; }
+.proof__item p{ font-size:.9rem; color:var(--ink-2); }
+.case{ border:1px solid var(--line); border-radius:var(--radius-lg); background:var(--surface); padding:clamp(1.8rem,4vw,2.8rem); box-shadow:var(--shadow-sm); }
+.case__label{ font-family:var(--font-display); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:.6rem; }
+.case h3{ font-size:1.45rem; margin-bottom:1.8rem; max-width:34ch; }
+.case__flow{ display:grid; grid-template-columns:repeat(5,1fr); gap:1.4rem; position:relative; }
+.case__step{ position:relative; }
+.case__step dt{ font-family:var(--font-display); font-size:.66rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--accent); margin-bottom:.5rem; padding-left:1.2rem; position:relative; }
+.case__step dt::before{ content:""; position:absolute; left:0; top:.28rem; width:8px; height:8px; border-radius:50%; border:2px solid var(--accent); }
+.case__step dd{ font-size:.86rem; color:var(--ink-2); padding-left:1.2rem; }
+.case__note{ margin-top:2rem; padding-top:1.4rem; border-top:1px solid var(--line); font-size:.88rem; color:var(--muted); font-style:italic; }
+@media (max-width:900px){ .case__flow{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .case__flow{ grid-template-columns:1fr; } }
+
+/* =========================================================================
+   INSIGHTS — thought leadership cards
+   ========================================================================= */
+.ins-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.1rem; }
+.ins{
+  display:flex; flex-direction:column; padding:2rem 1.8rem; border-radius:var(--radius-lg);
+  border:1px solid var(--line); background:var(--surface); transition:transform var(--t), box-shadow var(--t), border-color var(--t);
+}
+.ins:hover{ transform:translateY(-6px); box-shadow:var(--shadow); border-color:color-mix(in srgb, var(--accent) 38%, transparent); }
+.ins__cat{ font-family:var(--font-display); font-size:.68rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+.ins h3{ font-size:1.24rem; margin-bottom:.7rem; line-height:1.22; }
+.ins p{ font-size:.92rem; color:var(--muted); margin-bottom:1.6rem; flex-grow:1; }
+.ins__link{ display:inline-flex; align-items:center; gap:.5rem; font-family:var(--font-display); font-weight:600; font-size:.88rem; color:var(--ink); transition:gap var(--t), color var(--t); }
+.ins__link svg{ width:15px; height:15px; transition:transform var(--t); }
+.ins:hover .ins__link{ color:var(--accent); }
+.ins:hover .ins__link svg{ transform:translateX(4px); }
+
+/* =========================================================================
+   LEADERSHIP
+   ========================================================================= */
+.lead-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; }
+.leader{
+  position:relative; border-radius:var(--radius-lg); background:var(--surface);
+  border:1px solid var(--line); padding:2.4rem; overflow:hidden;
+  transition:transform var(--t), box-shadow var(--t), border-color var(--t);
+}
+.leader:hover{ transform:translateY(-6px); box-shadow:var(--shadow); border-color:color-mix(in srgb, var(--accent) 40%, transparent); }
+.leader__top{ display:flex; align-items:center; gap:1.3rem; margin-bottom:1.6rem; }
+.leader__mono{
+  width:78px; height:78px; border-radius:18px; flex-shrink:0; display:grid; place-items:center;
+  font-family:var(--font-display); font-weight:800; font-size:1.5rem; color:#fff;
+  background:linear-gradient(150deg, var(--accent-2), var(--navy));
+}
+.leader__name{ font-size:1.4rem; }
+.leader__role{ font-size:.85rem; color:var(--accent); font-weight:600; margin-top:.2rem; }
+.leader__role .badge{ display:inline-block; margin-left:.5rem; font-size:.6rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:.15rem .55rem; vertical-align:middle; }
+.leader p{ font-size:.94rem; color:var(--muted); margin-bottom:1rem; }
+.leader__roles{ display:flex; flex-direction:column; gap:.55rem; margin:1.2rem 0 1.4rem; }
+.leader__roles li{ display:flex; gap:.7rem; align-items:flex-start; font-size:.9rem; color:var(--ink-2); }
+.leader__roles li svg{ width:16px; height:16px; color:var(--accent); flex-shrink:0; margin-top:.15rem; }
+.leader__focus{ display:flex; flex-wrap:wrap; gap:.45rem; margin-bottom:1.4rem; }
+.leader__focus span{ font-size:.76rem; padding:.32rem .8rem; border-radius:999px; background:var(--bg-alt); border:1px solid var(--line); color:var(--ink-2); }
+.leader__mail{ display:inline-flex; align-items:center; gap:.55rem; font-family:var(--font-display); font-weight:600; font-size:.9rem; transition:color var(--t); }
+.leader__mail svg{ width:16px; height:16px; color:var(--accent); }
+.leader__mail:hover{ color:var(--accent); }
+
+/* =========================================================================
+   CONTACT
+   ========================================================================= */
+.contact__grid{ display:grid; grid-template-columns:1fr 1.05fr; gap:clamp(2rem,6vw,5rem); align-items:start; }
+.contact__resp{ display:inline-flex; align-items:center; gap:.6rem; margin-top:1.8rem; font-size:.86rem; font-weight:500; color:var(--ink-2); }
+.contact__resp .dot{ width:9px; height:9px; border-radius:50%; background:#2f8f5f; box-shadow:0 0 0 4px rgba(47,143,95,.18); }
+.contact__cards{ display:grid; gap:1rem; margin-top:1.8rem; }
+.ccard{ display:flex; align-items:center; gap:1.1rem; padding:1.3rem 1.4rem; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); transition:transform var(--t), box-shadow var(--t), border-color var(--t); }
+.ccard:hover{ transform:translateY(-4px); box-shadow:var(--shadow-sm); border-color:color-mix(in srgb, var(--accent) 40%, transparent); }
+.ccard__ic{ width:46px; height:46px; border-radius:12px; flex-shrink:0; display:grid; place-items:center; background:var(--ink); color:var(--bg); }
+.ccard__ic svg{ width:20px; height:20px; }
+.ccard .k{ font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+.ccard .v{ font-family:var(--font-display); font-weight:600; color:var(--ink); }
+
+.form{ border:1px solid var(--line); border-radius:var(--radius-lg); padding:clamp(1.6rem,3vw,2.4rem); background:var(--surface); box-shadow:var(--shadow-sm); }
+.form__row{ margin-bottom:1.2rem; }
+.form__two{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.form label{ display:block; font-size:.8rem; font-weight:500; color:var(--muted); margin-bottom:.5rem; }
+.form input,.form textarea,.form select{ width:100%; font-family:var(--font-body); font-size:.95rem; color:var(--ink); background:var(--bg-alt); border:1px solid var(--line); border-radius:10px; padding:.85rem 1rem; transition:border-color var(--t), box-shadow var(--t); }
+.form select{ appearance:none; -webkit-appearance:none; cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235c6675' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 1rem center; background-size:16px; padding-right:2.6rem; }
+.form input:focus,.form textarea:focus,.form select:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 4px color-mix(in srgb, var(--accent) 16%, transparent); }
+.form textarea{ resize:vertical; min-height:140px; }
+.form__note{ font-size:.85rem; min-height:1.2em; margin-top:.9rem; text-align:center; font-weight:500; display:flex; align-items:center; justify-content:center; gap:.5rem; }
+.form__consent{ font-size:.78rem; color:var(--muted); margin-top:1rem; text-align:center; }
+.form__consent a{ color:var(--accent); text-decoration:underline; text-underline-offset:2px; }
+@media (max-width:520px){ .form__two{ grid-template-columns:1fr; } }
+
+/* Honeypot + loading + validation states */
+.form__hp{ position:absolute !important; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; opacity:0; pointer-events:none; }
+.form input.is-invalid,.form textarea.is-invalid,.form select.is-invalid{ border-color:#c0392b; box-shadow:0 0 0 4px rgba(192,57,43,.12); }
+#formSubmit{ position:relative; }
+#formSubmit .btn__spinner{ display:none; }
+#formSubmit.is-loading{ pointer-events:none; opacity:.9; }
+#formSubmit.is-loading .btn__label{ visibility:hidden; }
+#formSubmit.is-loading .btn__spinner{
+  display:block; position:absolute; top:50%; left:50%; width:18px; height:18px; margin:-9px 0 0 -9px;
+  border:2px solid rgba(255,255,255,.35); border-top-color:#fff; border-radius:50%; animation:btnspin .7s linear infinite;
+}
+@keyframes btnspin{ to{ transform:rotate(360deg); } }
+.form__note svg{ width:18px; height:18px; flex-shrink:0; }
+.form__note.is-success{ color:#2f8f5f; animation:notepop .45s var(--ease); }
+.form__note.is-error{ color:#c0392b; animation:noteshake .5s var(--ease); }
+@keyframes notepop{ 0%{ transform:scale(.8); opacity:0; } 100%{ transform:scale(1); opacity:1; } }
+@keyframes noteshake{ 0%,100%{ transform:translateX(0); } 20%{ transform:translateX(-6px); } 40%{ transform:translateX(6px); } 60%{ transform:translateX(-4px); } 80%{ transform:translateX(4px); } }
+.form__note.is-success svg path{ stroke-dasharray:24; stroke-dashoffset:24; animation:checkdraw .5s .1s var(--ease) forwards; }
+@keyframes checkdraw{ to{ stroke-dashoffset:0; } }
+@media (prefers-reduced-motion: reduce){
+  #formSubmit.is-loading .btn__spinner{ animation-duration:1.4s; }
+  .form__note.is-success,.form__note.is-error{ animation:none; }
+  .form__note.is-success svg path{ animation:none; stroke-dashoffset:0; }
+}
+
+/* =========================================================================
+   OUR PRESENCE — static map.jpg background + animated SVG/HTML overlay
+   ========================================================================= */
+.presence{
+  /* Section-scoped overlay palette — Light mode (default) */
+  --map-line:#3a6ea5; --map-node:#20406b;
+  --map-glow:rgba(58,110,165,.55); --map-halo:rgba(58,110,165,.18);
+}
+:root[data-theme="dark"] .presence{
+  --map-line:#7fb1ec; --map-node:#bcd6f5;
+  --map-glow:rgba(111,160,214,.78); --map-halo:rgba(111,160,214,.26);
+}
+.presence__grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2.2rem,6vw,5rem); align-items:center; }
+.presence h2{ max-width:14ch; }
+.presence__text{ font-size:clamp(1rem,1.2vw,1.1rem); color:var(--muted); margin-top:1.3rem; font-weight:300; max-width:52ch; }
+.presence__text + .presence__text{ margin-top:1rem; }
+
+.presence__cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:.9rem; margin-top:2.4rem; }
+.pcard{
+  padding:1.3rem 1.3rem; border:1px solid var(--line); border-radius:var(--radius);
+  background:var(--glass); -webkit-backdrop-filter:blur(12px) saturate(160%); backdrop-filter:blur(12px) saturate(160%);
+  position:relative; overflow:hidden; transition:transform var(--t), box-shadow var(--t), border-color var(--t);
+}
+.pcard::before{ content:""; position:absolute; inset:0 0 auto 0; height:2px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); opacity:0; transition:opacity var(--t); }
+.pcard:hover{ transform:translateY(-4px); box-shadow:var(--shadow-sm); border-color:color-mix(in srgb, var(--accent) 38%, transparent); }
+.pcard:hover::before{ opacity:1; }
+.pcard .k{ display:block; font-family:var(--font-display); font-size:.62rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:.45rem; }
+.pcard .v{ display:block; font-family:var(--font-display); font-weight:600; font-size:1.02rem; color:var(--ink); line-height:1.2; }
+
+/* Map figure — the <img> defines the box & aspect ratio; everything else overlays it */
+.presence__map{
+  position:relative; border:1px solid var(--line); border-radius:var(--radius-lg);
+  overflow:hidden; background:var(--bg-alt); box-shadow:var(--shadow-sm); isolation:isolate;
+}
+.presence__img{ display:block; width:100%; height:auto; object-fit:contain; }   /* full image, never cropped; auto-adapts to map.jpg size */
+.presence__overlay{ position:absolute; inset:0; z-index:2; pointer-events:none; }
+
+/* City dots (HTML, so they stay perfectly circular at any image size) */
+.cdot{
+  position:absolute; width:9px; height:9px; margin:-4.5px 0 0 -4.5px; border-radius:50%;
+  background:var(--map-node); box-shadow:0 0 0 3px var(--map-halo), 0 0 9px var(--map-glow);
+  opacity:0; transform:scale(.3);
+}
+.presence__map.is-live .cdot{ animation:dotin .55s var(--ease) forwards; }
+@keyframes dotin{ to{ opacity:1; transform:scale(1); } }
+
+/* Discreet city labels */
+.clabel{
+  position:absolute; transform:translateY(-50%); white-space:nowrap; opacity:0;
+  font-family:var(--font-display); font-size:.66rem; font-weight:600; letter-spacing:.02em;
+  color:#eef3fb; background:rgba(9,14,24,.5); border:1px solid rgba(255,255,255,.14);
+  border-radius:6px; padding:2px 7px; -webkit-backdrop-filter:blur(5px); backdrop-filter:blur(5px);
+  transition:opacity .6s var(--ease);
+}
+.clabel--r{ margin-left:11px; }
+.clabel--l{ transform:translate(-100%,-50%); margin-left:-11px; }
+.clabel--key{ font-size:.72rem; color:#fff; background:rgba(32,64,107,.72); border-color:rgba(159,194,237,.5); }
+.presence__map.is-live .clabel{ opacity:1; }
+
+/* Karlsruhe pulsing marker */
+.ka{ position:absolute; width:0; height:0; }
+.ka__core{
+  position:absolute; left:0; top:0; width:13px; height:13px; margin:-6.5px 0 0 -6.5px; border-radius:50%;
+  background:#fff; box-shadow:0 0 0 3px var(--map-node), 0 0 14px var(--map-glow); z-index:2;
+}
+.ka__ring{
+  position:absolute; left:0; top:0; width:13px; height:13px; margin:-6.5px 0 0 -6.5px; border-radius:50%;
+  border:1.5px solid var(--map-line); opacity:0;
+}
+.presence__map.is-live .ka__ring{ animation:kapulse 3.2s ease-out infinite; }
+.presence__map.is-live .ka__ring--2{ animation-delay:1.6s; }
+@keyframes kapulse{ 0%{ transform:scale(1); opacity:.6; } 70%{ opacity:0; } 100%{ transform:scale(4.2); opacity:0; } }
+
+.presence__cap{ text-align:center; margin-top:1.3rem; font-size:.82rem; color:var(--muted); }
+
+@media (prefers-reduced-motion:reduce){
+  .cdot{ opacity:1; transform:none; animation:none; }
+  .clabel{ opacity:1; transition:none; }
+  .presence__map.is-live .ka__ring{ animation:none; }
+}
+@media (max-width:1024px){
+  .presence__grid{ grid-template-columns:1fr; }
+  .presence__map{ max-width:600px; margin-inline:auto; width:100%; }
+}
+@media (max-width:760px){
+  /* keep it clean on small screens: dots + lines + Karlsruhe label only */
+  .clabel:not(.clabel--key){ display:none; }
+}
+@media (max-width:520px){
+  .presence__cards{ grid-template-columns:1fr; }
+}
+
+/* =========================================================================
+   FOOTER
+   ========================================================================= */
+.footer{ background:var(--navy); color:rgba(255,255,255,.66); padding:4.5rem 0 2.2rem; }
+.footer__top{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:2.4rem; padding-bottom:2.8rem; border-bottom:1px solid rgba(255,255,255,.12); }
+.footer .brand__name{ color:#fff; font-size:1.2rem; }
+.footer .brand__sub{ color:var(--accent-2); }
+.footer__about{ margin-top:1.1rem; font-size:.9rem; max-width:36ch; color:rgba(255,255,255,.55); }
+.footer__col h4{ font-family:var(--font-display); font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent-2); margin-bottom:1.1rem; }
+.footer__col a,.footer__col button{ display:block; font-size:.9rem; color:rgba(255,255,255,.6); padding:.32rem 0; transition:color var(--t); text-align:left; }
+.footer__col a:hover,.footer__col button:hover{ color:#fff; }
+.footer__bottom{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; padding-top:1.8rem; font-size:.82rem; color:rgba(255,255,255,.42); }
+.footer__bottom nav{ display:flex; gap:1.5rem; flex-wrap:wrap; }
+.footer__bottom a:hover,.footer__bottom button:hover{ color:#fff; }
+.footer__bottom button{ font-size:.82rem; color:rgba(255,255,255,.42); }
+
+/* =========================================================================
+   RESPONSIVE
+   ========================================================================= */
+@media (max-width:1024px){
+  .who-grid,.ind-grid,.proof__grid{ grid-template-columns:repeat(2,1fr); }
+  .svc-grid,.ins-grid{ grid-template-columns:1fr; }
+  .reg__grid,.lead-grid,.contact__grid{ grid-template-columns:1fr; }
+  .footer__top{ grid-template-columns:1fr 1fr; }
+}
+@media (max-width:760px){
+  .nav__menu{
+    position:fixed; inset:0; flex-direction:column; justify-content:center; gap:2rem;
+    background:var(--bg); transform:translateX(100%); transition:transform var(--t); z-index:1050;
+  }
+  .nav__menu.is-open{ transform:none; }
+  .nav__menu .nav__link{ font-size:1.35rem; }
+  .burger{ display:flex; }
+  .nav__right .nav__cta{ display:none; }
+  .who-grid,.ind-grid,.proof__grid{ grid-template-columns:1fr; }
+  .hero__trust{ gap:.55rem; }
+  .footer__top{ grid-template-columns:1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ===================== HEADER ===================== -->
+<header class="header" id="header">
+  <nav class="nav container" aria-label="Primary">
+    <a href="#home" class="brand" aria-label="Enseling — home">Enseling</a>
+
+    <div class="nav__menu" id="navMenu">
+      <a href="#home"       class="nav__link">Home</a>
+      <a href="#expertise"  class="nav__link">Expertise</a>
+      <a href="#services"   class="nav__link">Services</a>
+      <a href="#process"    class="nav__link">Process</a>
+      <a href="#insights"   class="nav__link">Insights</a>
+      <a href="#leadership" class="nav__link">Leadership</a>
+      <a href="#contact"    class="nav__link">Contact</a>
+    </div>
+
+    <div class="nav__right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4.5"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3M4.2 4.2l2 2M17.8 17.8l2 2M19.8 4.2l-2 2M6.2 17.8l-2 2"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+      <a href="#contact" class="nav__cta">Strategy Call</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="hero__bg hero__bg--dark"  aria-hidden="true"></div>
+    <div class="hero__bg hero__bg--light" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <p class="eyebrow hero__eyebrow">Engineering • Regulatory Strategy • Surface Technologies</p>
+      <h1 class="h-display hero__title">Strategic REACH &amp; <span class="grad">Surface Technology</span> Consulting for European Industry</h1>
+      <p class="hero__sub">We support industrial companies in chemical compliance, REACH authorisation, surface engineering strategy and long-term regulatory positioning.</p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--solid">Request a Strategy Check
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#expertise" class="btn btn--ghost">View Expertise</a>
+      </div>
+
+      <ul class="hero__trust" aria-label="Areas of proven expertise">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> REACH &amp; Chromium VI Expertise</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Surface Technology &amp; Electroplating</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> European Industry Focus</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> VECCO Leadership Experience</li>
+      </ul>
+    </div>
+
+    <div class="hero__cue"><span>Scroll</span><i></i></div>
+  </section>
+
+  <!-- ===================== POSITIONING / WHO WE HELP ===================== -->
+  <section class="section" id="positioning">
+    <div class="container">
+      <div class="head reveal">
+        <p class="eyebrow">Who We Help</p>
+        <h2 class="h-section">Focused advisory for companies facing regulatory and industrial complexity</h2>
+        <p class="lead">Enseling Consulting works with industrial companies, technology providers and decision-makers in surface technology, electroplating and chemical compliance. We help organisations understand regulatory risk, structure authorisation strategies and develop resilient industrial positioning.</p>
+      </div>
+
+      <div class="who-grid">
+        <article class="who reveal">
+          <span class="who__no">01</span>
+          <h3>Industrial Companies</h3>
+          <dl>
+            <div><dt>The Problem</dt><dd>Regulatory exposure and authorisation duties create uncertainty around the continued use of critical substances and processes.</dd></div>
+            <div><dt>What We Do</dt><dd>We map regulatory risk, structure authorisation strategy and translate compliance into a clear operational plan.</dd></div>
+            <div><dt>The Result</dt><dd class="is-result">A defensible position and a structured basis for business-critical decisions.</dd></div>
+          </dl>
+        </article>
+
+        <article class="who reveal">
+          <span class="who__no">02</span>
+          <h3>Surface Technology Providers</h3>
+          <dl>
+            <div><dt>The Problem</dt><dd>Finishing and electroplating businesses must balance technical processes, investment decisions and tightening chemicals regulation.</dd></div>
+            <div><dt>What We Do</dt><dd>We provide technical and strategic context, review process positioning and align it with regulatory reality.</dd></div>
+            <div><dt>The Result</dt><dd class="is-result">Better-informed technology, compliance and investment decisions.</dd></div>
+          </dl>
+        </article>
+
+        <article class="who reveal">
+          <span class="who__no">03</span>
+          <h3>Associations &amp; Strategic Stakeholders</h3>
+          <dl>
+            <div><dt>The Problem</dt><dd>Regulation is shaped through dialogue and representation — not compliance alone — and many voices remain unstructured.</dd></div>
+            <div><dt>What We Do</dt><dd>We develop stakeholder strategy, policy narratives and positioning for regulatory and industrial discussions.</dd></div>
+            <div><dt>The Result</dt><dd class="is-result">A clearer, stronger voice in European industrial and regulatory debate.</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section class="section section--alt" id="services">
+    <div class="container">
+      <div class="head reveal">
+        <p class="eyebrow">Services</p>
+        <h2 class="h-section">Clearly scoped engagements, not vague promises</h2>
+        <p class="lead">Each engagement is defined by a concrete deliverable, a realistic timeline and a measurable outcome — so you know exactly what you receive and when.</p>
+      </div>
+
+      <div class="svc-grid">
+        <!-- 1 -->
+        <article class="svc reveal">
+          <div class="svc__head"><span class="svc__no">01</span><h3>REACH Strategy Audit</h3></div>
+          <p class="svc__problem">Companies face uncertainty around REACH authorisation, compliance duties and future regulatory exposure.</p>
+          <dl class="svc__rows">
+            <div class="svc__row"><dt>What You Get</dt><dd><strong>Regulatory risk assessment, strategic roadmap and priority action plan.</strong></dd></div>
+            <div class="svc__row"><dt>Timeline</dt><dd>2–4 weeks</dd></div>
+            <div class="svc__row svc__row--out"><dt>Outcome</dt><dd>Clear understanding of exposure, options and next steps.</dd></div>
+            <div class="svc__row"><dt>Best Fit</dt><dd>Industrial companies using or depending on regulated substances.</dd></div>
+            <div class="svc__row svc__row--not"><dt>Not For</dt><dd>Companies looking for generic legal templates without strategic guidance.</dd></div>
+          </dl>
+        </article>
+
+        <!-- 2 -->
+        <article class="svc reveal">
+          <div class="svc__head"><span class="svc__no">02</span><h3>Chromium VI Authorisation Roadmap</h3></div>
+          <p class="svc__problem">Chromium VI remains one of the most scrutinised substance classes in European industry.</p>
+          <dl class="svc__rows">
+            <div class="svc__row"><dt>What You Get</dt><dd><strong>Authorisation pathway, stakeholder mapping, documentation strategy and timeline.</strong></dd></div>
+            <div class="svc__row"><dt>Timeline</dt><dd>4–8 weeks</dd></div>
+            <div class="svc__row svc__row--out"><dt>Outcome</dt><dd>Defensible regulatory plan and structured decision-making basis.</dd></div>
+            <div class="svc__row"><dt>Best Fit</dt><dd>Companies dependent on Chromium VI processes or supply chains.</dd></div>
+          </dl>
+        </article>
+
+        <!-- 3 -->
+        <article class="svc reveal">
+          <div class="svc__head"><span class="svc__no">03</span><h3>Surface Technology Advisory</h3></div>
+          <p class="svc__problem">Companies need technical and strategic guidance around surface finishing, electroplating and industrial process positioning.</p>
+          <dl class="svc__rows">
+            <div class="svc__row"><dt>What You Get</dt><dd><strong>Technical review, process context and strategic recommendations.</strong></dd></div>
+            <div class="svc__row"><dt>Timeline</dt><dd>Project-based</dd></div>
+            <div class="svc__row svc__row--out"><dt>Outcome</dt><dd>Better decision-making for technology, compliance and investment.</dd></div>
+            <div class="svc__row"><dt>Best Fit</dt><dd>Surface finishing and galvanic operations facing process or investment decisions.</dd></div>
+          </dl>
+        </article>
+
+        <!-- 4 -->
+        <article class="svc reveal">
+          <div class="svc__head"><span class="svc__no">04</span><h3>Regulatory Risk &amp; Compliance Sprint</h3></div>
+          <p class="svc__problem">Management teams need fast clarity before making business-critical decisions.</p>
+          <dl class="svc__rows">
+            <div class="svc__row"><dt>What You Get</dt><dd><strong>Compact review, risk map, executive summary and action priorities.</strong></dd></div>
+            <div class="svc__row"><dt>Timeline</dt><dd>10 business days</dd></div>
+            <div class="svc__row svc__row--out"><dt>Outcome</dt><dd>Fast strategic clarity.</dd></div>
+            <div class="svc__row"><dt>Best Fit</dt><dd>Leadership teams under time pressure ahead of a key decision.</dd></div>
+          </dl>
+        </article>
+
+        <!-- 5 -->
+        <article class="svc reveal">
+          <div class="svc__head"><span class="svc__no">05</span><h3>Industrial Policy &amp; Stakeholder Strategy</h3></div>
+          <p class="svc__problem">Regulation is shaped not only by compliance, but by dialogue, associations and political positioning.</p>
+          <dl class="svc__rows">
+            <div class="svc__row"><dt>What You Get</dt><dd><strong>Stakeholder strategy, policy narrative, association positioning and communication framework.</strong></dd></div>
+            <div class="svc__row"><dt>Timeline</dt><dd>4–6 weeks</dd></div>
+            <div class="svc__row svc__row--out"><dt>Outcome</dt><dd>Stronger voice in regulatory and industrial discussions.</dd></div>
+            <div class="svc__row"><dt>Best Fit</dt><dd>Associations and companies engaging in regulatory dialogue.</dd></div>
+          </dl>
+        </article>
+
+        <!-- 6 -->
+        <article class="svc reveal">
+          <div class="svc__head"><span class="svc__no">06</span><h3>Business Development &amp; Transformation</h3></div>
+          <p class="svc__problem">Industrial companies need to adapt to regulation, market pressure and technology shifts.</p>
+          <dl class="svc__rows">
+            <div class="svc__row"><dt>What You Get</dt><dd><strong>Growth strategy, partnership approach, operational priorities and digital development plan.</strong></dd></div>
+            <div class="svc__row"><dt>Timeline</dt><dd>Project-based</dd></div>
+            <div class="svc__row svc__row--out"><dt>Outcome</dt><dd>Clearer commercial direction and stronger strategic execution.</dd></div>
+            <div class="svc__row"><dt>Best Fit</dt><dd>Industrial companies adapting their model to a changing market.</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REGULATORY EXCELLENCE (EXPERTISE) ===================== -->
+  <section class="section regulatory" id="expertise">
+    <div class="container reg__grid">
+      <div class="reveal reveal--l">
+        <p class="eyebrow">Regulatory Excellence</p>
+        <h2 class="h-section">Mastery of European chemicals regulation</h2>
+        <p class="lead">From REACH authorisation to Chromium VI strategy, we help industrial companies anticipate, shape and comply with the regulations that govern their future — combining technical depth with policy insight and decades of practical industry leadership.</p>
+        <div class="reg__tags">
+          <span>REACH</span><span>Chromium VI</span><span>Authorisation</span><span>Chemical Compliance</span>
+          <span>EU Legislation</span><span>Industrial Policy</span><span>Surface Technology</span><span>Electroplating</span>
+        </div>
+      </div>
+
+      <div class="reg__panel reveal reveal--r">
+        <div class="reg__item"><span class="n">01</span><div><h4>Authorisation Strategy</h4><p>Structured pathways through REACH authorisation and applications for continued use.</p></div></div>
+        <div class="reg__item"><span class="n">02</span><div><h4>Chromium VI Expertise</h4><p>Specialist guidance on one of Europe's most scrutinised substance classes.</p></div></div>
+        <div class="reg__item"><span class="n">03</span><div><h4>Industrial Policy &amp; Advocacy</h4><p>Representing industry interests within associations and regulatory dialogue.</p></div></div>
+        <div class="reg__item"><span class="n">04</span><div><h4>Compliance Roadmaps</h4><p>Practical, defensible plans aligning operations with evolving EU legislation.</p></div></div>
+        <div class="reg__item"><span class="n">05</span><div><h4>Technical Documentation</h4><p>Robust, well-structured documentation to support authorisation and review.</p></div></div>
+        <div class="reg__item"><span class="n">06</span><div><h4>Strategic Risk Communication</h4><p>Clear positioning of regulatory risk for boards, partners and authorities.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROCESS ===================== -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="head reveal">
+        <p class="eyebrow">Process</p>
+        <h2 class="h-section">A clear path from first conversation to lasting result</h2>
+        <p class="lead">No open-ended, unclear projects. Every engagement follows a transparent five-step structure with defined results at each stage.</p>
+      </div>
+
+      <div class="steps">
+        <article class="step reveal">
+          <div class="step__no">1</div>
+          <h4>Initial Strategy Call</h4>
+          <p>A short first conversation to understand your situation and objectives.</p>
+          <div class="step__meta"><span><b>Result</b> Shared understanding of scope</span><span><b>Format</b> 30–45 min call</span></div>
+        </article>
+        <article class="step reveal">
+          <div class="step__no">2</div>
+          <h4>Diagnostic Review</h4>
+          <p>Analysis of your starting point, regulatory risk and strategic options.</p>
+          <div class="step__meta"><span><b>Result</b> Risk &amp; options assessment</span><span><b>Format</b> 1–2 weeks</span></div>
+        </article>
+        <article class="step reveal">
+          <div class="step__no">3</div>
+          <h4>Strategic Roadmap</h4>
+          <p>A structured plan with priorities, risks and clear paths to action.</p>
+          <div class="step__meta"><span><b>Result</b> Prioritised roadmap</span><span><b>Format</b> Documented plan</span></div>
+        </article>
+        <article class="step reveal">
+          <div class="step__no">4</div>
+          <h4>Implementation Support</h4>
+          <p>Guidance through delivery, documentation, communication and stakeholders.</p>
+          <div class="step__meta"><span><b>Result</b> Executed measures</span><span><b>Format</b> Ongoing support</span></div>
+        </article>
+        <article class="step reveal">
+          <div class="step__no">5</div>
+          <h4>Review &amp; Optimisation</h4>
+          <p>Measurement, adjustment and continued strategic development.</p>
+          <div class="step__meta"><span><b>Result</b> Refined positioning</span><span><b>Format</b> Periodic review</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INDUSTRIES ===================== -->
+  <section class="section section--alt" id="industries">
+    <div class="container">
+      <div class="head reveal">
+        <p class="eyebrow">Industries</p>
+        <h2 class="h-section">Sectors we understand from the inside</h2>
+        <p class="lead">Decades of operational and regulatory experience across the value chain of European surface technology and industrial manufacturing.</p>
+      </div>
+
+      <div class="ind-grid">
+        <article class="ind reveal">
+          <div class="ind__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v6m0 0 4 2v4l-4 2-4-2v-4l4-2Zm0 12v8"/></svg></div>
+          <h3>Surface Finishing Companies</h3>
+          <dl><dt>Challenge</dt><dd>Tightening regulation around finishing chemistries threatens established processes.</dd><dt>How We Help</dt><dd>We align process positioning with regulatory strategy and continued-use pathways.</dd></dl>
+        </article>
+        <article class="ind reveal">
+          <div class="ind__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 3v6a5 5 0 0 0 10 0V3M5 21h14M9 21v-3m6 3v-3"/></svg></div>
+          <h3>Electroplating Businesses</h3>
+          <dl><dt>Challenge</dt><dd>Galvanic operations face compliance pressure alongside technical and cost demands.</dd><dt>How We Help</dt><dd>We combine process insight with REACH and authorisation strategy.</dd></dl>
+        </article>
+        <article class="ind reveal">
+          <div class="ind__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 3h6l1 4-2 2v3l3 2v5H7v-5l3-2V9L8 7l1-4Z"/></svg></div>
+          <h3>Chemical Suppliers</h3>
+          <dl><dt>Challenge</dt><dd>Substance restrictions reshape portfolios and customer relationships.</dd><dt>How We Help</dt><dd>We structure substance strategy and regulatory positioning under EU chemicals law.</dd></dl>
+        </article>
+        <article class="ind reveal">
+          <div class="ind__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 21h18M5 21V8l5-3 5 3v13M9 12h2m-2 4h2"/></svg></div>
+          <h3>Industrial Manufacturers</h3>
+          <dl><dt>Challenge</dt><dd>Supply-chain compliance and component finishing carry hidden regulatory risk.</dd><dt>How We Help</dt><dd>We assess exposure across the chain and build defensible compliance roadmaps.</dd></dl>
+        </article>
+        <article class="ind reveal">
+          <div class="ind__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+          <h3>Technology Providers</h3>
+          <dl><dt>Challenge</dt><dd>Emerging processes need a credible regulatory and market narrative.</dd><dt>How We Help</dt><dd>We connect technical capability with regulatory context and market positioning.</dd></dl>
+        </article>
+        <article class="ind reveal">
+          <div class="ind__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 21V10l8-6 8 6v11M9 21v-6h6v6"/></svg></div>
+          <h3>Associations &amp; Industry Stakeholders</h3>
+          <dl><dt>Challenge</dt><dd>Collective interests must be represented clearly in regulatory dialogue.</dd><dt>How We Help</dt><dd>We develop stakeholder strategy, policy narrative and advocacy positioning.</dd></dl>
+        </article>
+        <article class="ind reveal">
+          <div class="ind__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 21h18M6 21V7l6-4 6 4v14M10 11h4m-4 4h4"/></svg></div>
+          <h3>Mittelstand &amp; Industrial SMEs</h3>
+          <dl><dt>Challenge</dt><dd>German industrial SMEs face complex regulation without large in-house teams.</dd><dt>How We Help</dt><dd>We deliver focused, pragmatic strategy proportional to resources and risk.</dd></dl>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROOF / CREDIBILITY ===================== -->
+  <section class="section" id="proof">
+    <div class="container">
+      <div class="head reveal">
+        <p class="eyebrow">Why Us</p>
+        <h2 class="h-section">Built on industry experience, regulatory depth and European representation</h2>
+        <p class="lead">Our credibility rests on verifiable leadership and operational experience — not marketing claims, borrowed logos or invented testimonials.</p>
+      </div>
+
+      <div class="proof__grid">
+        <div class="proof__item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 21V10l8-6 8 6v11M9 21v-6h6v6"/></svg><p>VECCO e.V. leadership experience in European chemicals representation.</p></div>
+        <div class="proof__item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M5 21V8l5-3 5 3v13"/></svg><p>Management roles across surface technology and industrial companies.</p></div>
+        <div class="proof__item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 11l3 3L22 4M21 12a9 9 0 1 1-5.2-8.2"/></svg><p>Direct experience with REACH and Chromium VI authorisation topics.</p></div>
+        <div class="proof__item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v12H7l-3 3V4Z"/></svg><p>Publications and expert contributions in industry media.</p></div>
+        <div class="proof__item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M7 21v-5m5 5V9m5 12v-8M5 6l5-3 9 4"/></svg><p>Conference and industry dialogue experience across Europe.</p></div>
+        <div class="proof__item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 3v6a5 5 0 0 0 10 0V3M5 21h14"/></svg><p>Practical background in electroplating and surface technology.</p></div>
+      </div>
+
+      <div class="case reveal">
+        <p class="case__label">Engagement Framework</p>
+        <h3>How a typical advisory engagement is structured</h3>
+        <dl class="case__flow">
+          <div class="case__step"><dt>Starting Point</dt><dd>An industrial company dependent on a regulated substance or process.</dd></div>
+          <div class="case__step"><dt>Challenge</dt><dd>Uncertainty around authorisation, compliance duties and future exposure.</dd></div>
+          <div class="case__step"><dt>Approach</dt><dd>Structured diagnostic, regulatory risk mapping and strategic roadmap.</dd></div>
+          <div class="case__step"><dt>Result Area</dt><dd>A defensible position and a clear basis for business-critical decisions.</dd></div>
+          <div class="case__step"><dt>Next Step</dt><dd>Implementation support, documentation and stakeholder engagement.</dd></div>
+        </dl>
+        <p class="case__note">Detailed project references available upon request.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LEADERSHIP ===================== -->
+  <section class="section section--alt" id="leadership">
+    <div class="container">
+      <div class="head reveal">
+        <p class="eyebrow">Leadership</p>
+        <h2 class="h-section">The people behind the practice</h2>
+        <p class="lead">A leadership team uniting deep industry authority with a modern, internationally driven approach to corporate development.</p>
+      </div>
+
+      <div class="lead-grid">
+        <!-- Tim — Managing Director -->
+        <article class="leader reveal reveal--l">
+          <div class="leader__top">
+            <div class="leader__mono" aria-hidden="true">TE</div>
+            <div>
+              <div class="leader__name">Tim Enseling</div>
+              <div class="leader__role">Managing Director <span class="badge">Leadership</span></div>
+            </div>
+          </div>
+          <p>Representing the next generation of the firm, Tim leads strategic direction, international development and the digital transformation of the consultancy.</p>
+          <ul class="leader__roles">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Business development &amp; corporate strategy</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Digitalisation &amp; modern operations</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> International growth &amp; project management</li>
+          </ul>
+          <div class="leader__focus"><span>Strategy</span><span>Digitalisation</span><span>Business Development</span><span>International</span></div>
+          <a class="leader__mail" href="mailto:tim.acc444@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7l9 6 9-6M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg>
+            tim.acc444@gmail.com
+          </a>
+        </article>
+
+        <!-- Matthias — Senior Industry Consultant -->
+        <article class="leader reveal reveal--r">
+          <div class="leader__top">
+            <div class="leader__mono" aria-hidden="true">ME</div>
+            <div>
+              <div class="leader__name">Matthias Enseling</div>
+              <div class="leader__role">Senior Industry Consultant <span class="badge">Industry Expert</span></div>
+            </div>
+          </div>
+          <p>German entrepreneur and industry expert in surface technology and electroplating, recognised across European chemicals regulation and industrial policy.</p>
+          <ul class="leader__roles">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Chairman of the Board, VECCO e.V.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Managing Director, Eupoc GmbH</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Managing Director, Hapoc GmbH &amp; Co. KG</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Managing Director, Wasserelektrolyse Hydrotechnik GmbH</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Former Managing Director, Hartchrom GmbH Karlsruhe</li>
+          </ul>
+          <div class="leader__focus"><span>REACH</span><span>Chromium VI</span><span>Surface Technology</span><span>Electroplating</span><span>Industrial Policy</span><span>Authorisation</span></div>
+          <a class="leader__mail" href="mailto:matthias.enseling@web.de">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7l9 6 9-6M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg>
+            matthias.enseling@web.de
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INSIGHTS ===================== -->
+  <section class="section" id="insights">
+    <div class="container">
+      <div class="head reveal">
+        <p class="eyebrow">Insights</p>
+        <h2 class="h-section">Perspectives on regulation, surface technology and industrial strategy</h2>
+        <p class="lead">Selected thinking on the regulatory and strategic questions shaping the future of European surface technology.</p>
+      </div>
+
+      <div class="ins-grid">
+        <article class="ins reveal">
+          <span class="ins__cat">Regulation</span>
+          <h3>The future of Chromium VI in European surface technology</h3>
+          <p>How evolving restrictions and authorisation decisions are reshaping the strategic outlook for hard chrome and functional finishing.</p>
+          <a class="ins__link" href="#contact">Read Insight <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+        <article class="ins reveal">
+          <span class="ins__cat">Competitiveness</span>
+          <h3>How REACH authorisation shapes industrial competitiveness</h3>
+          <p>Why regulatory strategy is becoming a core determinant of industrial resilience and long-term market position in Europe.</p>
+          <a class="ins__link" href="#contact">Read Insight <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+        <article class="ins reveal">
+          <span class="ins__cat">Strategy</span>
+          <h3>Why surface technology needs a stronger regulatory strategy</h3>
+          <p>Moving from reactive compliance to proactive positioning in regulatory and industrial-policy dialogue.</p>
+          <a class="ins__link" href="#contact">Read Insight <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+        <article class="ins reveal">
+          <span class="ins__cat">Compliance</span>
+          <h3>Building resilient compliance roadmaps for industrial companies</h3>
+          <p>A structured approach to turning regulatory uncertainty into a defensible, decision-ready plan.</p>
+          <a class="ins__link" href="#contact">Read Insight <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OUR PRESENCE ===================== -->
+  <section class="section presence" id="presence">
+    <div class="container">
+      <div class="head head--center reveal">
+        <p class="eyebrow eyebrow--center">Our Presence</p>
+        <h2 class="h-section">Based in Karlsruhe. Supporting clients across Europe.</h2>
+      </div>
+
+      <div class="presence__grid">
+        <!-- Left: narrative + premium cards -->
+        <div class="reveal reveal--l">
+          <h2 class="h-section">Strategically located in the heart of Europe.</h2>
+          <p class="presence__text">Our headquarters are located in Karlsruhe, Germany — one of Europe's strongest industrial and engineering regions.</p>
+          <p class="presence__text">From here, we support industrial companies, associations and technology partners across Europe with strategic consulting in surface technology, electroplating, REACH regulation and industrial transformation.</p>
+
+          <div class="presence__cards">
+            <div class="pcard"><span class="k">Headquarters</span><span class="v">Karlsruhe, Germany</span></div>
+            <div class="pcard"><span class="k">Coverage</span><span class="v">European Union</span></div>
+            <div class="pcard"><span class="k">Focus</span><span class="v">Industrial Consulting</span></div>
+          </div>
+        </div>
+
+        <!-- Right: static map.png background (its own routes) + HTML city dots/labels overlay.
+             Dots, labels and the Karlsruhe marker are generated in JS from the CITIES array
+             at the bottom of the page — tweak a city's x/y % there to align it to the map. -->
+        <figure class="presence__fig reveal reveal--r" style="margin:0;">
+          <div class="presence__map" id="presenceMap">
+            <img class="presence__img" src="./assets/images/map.jpg" alt="Map of Europe showing Enseling Consulting headquartered in Karlsruhe and connected to major cities across the European Union" decoding="async" />
+            <div class="presence__overlay" id="presenceOverlay"></div>
+          </div>
+          <figcaption class="presence__cap">Headquartered in Karlsruhe, serving partners across Europe.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section section--alt" id="contact">
+    <div class="container contact__grid">
+      <div class="reveal reveal--l">
+        <p class="eyebrow">Contact</p>
+        <h2 class="h-section">Let's discuss your regulatory or industrial challenge</h2>
+        <p class="lead" style="margin-top:1.2rem;">Tell us briefly about your situation. We will review your inquiry and get back to you as soon as possible to determine whether and how we can support your project.</p>
+
+        <div class="contact__resp"><span class="dot" aria-hidden="true"></span> Usually within 24–48 hours</div>
+
+        <div class="contact__cards">
+          <a class="ccard" href="mailto:tim.acc444@gmail.com">
+            <span class="ccard__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7l9 6 9-6M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg></span>
+            <div><div class="k">Tim Enseling · Managing Director</div><div class="v">tim.acc444@gmail.com</div></div>
+          </a>
+          <a class="ccard" href="mailto:matthias.enseling@web.de">
+            <span class="ccard__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7l9 6 9-6M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg></span>
+            <div><div class="k">Matthias Enseling · Senior Industry Consultant</div><div class="v">matthias.enseling@web.de</div></div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact form — sent via EmailJS -->
+      <form class="form reveal reveal--r" id="contactForm" novalidate aria-label="Contact form">
+        <input type="hidden" name="to_email" value="tim.acc444@gmail.com" />
+        <input type="hidden" name="cc_email" value="" /><!-- e.g. matthias.enseling@web.de -->
+
+        <!-- Honeypot anti-spam field -->
+        <div class="form__hp" aria-hidden="true">
+          <label for="f-website">Leave this field empty</label>
+          <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="form__two">
+          <div class="form__row"><label for="f-name">Name</label><input id="f-name" name="name" type="text" placeholder="Your name" autocomplete="name" required /></div>
+          <div class="form__row"><label for="f-company">Company</label><input id="f-company" name="company" type="text" placeholder="Your organisation" autocomplete="organization" /></div>
+        </div>
+        <div class="form__row"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="your@email.com" autocomplete="email" required /></div>
+        <div class="form__row"><label for="f-subject">Subject</label><input id="f-subject" name="subject" type="text" placeholder="How can we help?" /></div>
+        <div class="form__row">
+          <label for="f-area">Area of Interest <span style="font-weight:400;">(optional)</span></label>
+          <select id="f-area" name="area">
+            <option value="">Select an area…</option>
+            <option>REACH Strategy</option>
+            <option>Chromium VI</option>
+            <option>Surface Technology</option>
+            <option>Chemical Compliance</option>
+            <option>Industrial Policy</option>
+            <option>Business Development</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form__row"><label for="f-message">Message</label><textarea id="f-message" name="message" placeholder="Tell us about your inquiry…" required></textarea></div>
+
+        <button type="submit" class="btn btn--solid btn--full" id="formSubmit">
+          <span class="btn__label">Send Inquiry
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+          <span class="btn__spinner" aria-hidden="true"></span>
+        </button>
+
+        <p class="form__note" id="formNote" role="status" aria-live="polite"></p>
+        <p class="form__consent">By sending this inquiry you agree to be contacted regarding your request. See our <a href="#" data-modal="privacy">Privacy Policy</a>.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <span class="brand__name" style="font-family:var(--font-display);font-weight:800;">Enseling Consulting</span>
+        <span class="brand__sub" style="display:block;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;">Engineering · Regulatory · Surface</span>
+        <p class="footer__about">Strategic consulting for European industrial companies in REACH regulation, Chromium VI, surface technology, electroplating and chemical compliance.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="#positioning">Who We Help</a><a href="#leadership">Leadership</a><a href="#proof">Why Us</a>
+      </div>
+      <div class="footer__col">
+        <h4>Expertise</h4>
+        <a href="#services">Services</a><a href="#expertise">Regulatory</a><a href="#industries">Industries</a><a href="#insights">Insights</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="mailto:tim.acc444@gmail.com">tim.acc444@gmail.com</a>
+        <a href="mailto:matthias.enseling@web.de">matthias.enseling@web.de</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span id="year"></span> Enseling Consulting. All rights reserved.</span>
+      <nav aria-label="Legal">
+        <a href="#" data-modal="imprint">Imprint</a>
+        <a href="#" data-modal="privacy">Privacy</a>
+        <button type="button" data-modal="cookies">Cookie Settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- EmailJS SDK (browser build, v4) — powers the contact form -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+
+<script>
+/* =========================================================================
+   ENSELING CONSULTING — interactions
+   ========================================================================= */
+(function () {
+  'use strict';
+  const root = document.documentElement;
+
+  /* ---- Theme: respect saved choice / system, toggle + persist ---- */
+  const saved = (function(){ try { return localStorage.getItem('ec-theme'); } catch(e){ return null; } })();
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  root.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('ec-theme', next); } catch(e){}
+  });
+
+  /* ---- Header glassmorphism on scroll (rAF-throttled) ---- */
+  const header = document.getElementById('header');
+  let ticking = false;
+  function onScroll(){
+    header.classList.toggle('is-scrolled', window.scrollY > 30);
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => { if (!ticking){ requestAnimationFrame(onScroll); ticking = true; } }, { passive:true });
+  onScroll();
+
+  /* ---- Mobile burger ---- */
+  const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('navMenu');
+  const closeMenu = () => {
+    burger.classList.remove('is-open'); navMenu.classList.remove('is-open');
+    burger.setAttribute('aria-expanded','false'); document.body.style.overflow = '';
+  };
+  burger.addEventListener('click', () => {
+    const open = burger.classList.toggle('is-open');
+    navMenu.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  /* ---- Scroll reveal with staggered cascade ---- */
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const sibs = Array.prototype.slice.call(el.parentElement.children).filter(c => c.classList.contains('reveal'));
+        const i = sibs.indexOf(el);
+        el.style.transitionDelay = (i > -1 ? Math.min(i, 8) * 80 : 0) + 'ms';
+        el.classList.add('in');
+        io.unobserve(el);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  /* ---- Scroll-spy: highlight active nav link ---- */
+  const navLinks = Array.prototype.slice.call(navMenu.querySelectorAll('.nav__link'));
+  const sections = navLinks
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+  if ('IntersectionObserver' in window && sections.length) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        navLinks.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + id));
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(s => spy.observe(s));
+  }
+
+  /* ---- Light parallax on the hero photo ---- */
+  const heroBgs = document.querySelectorAll('.hero__bg');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (heroBgs.length && !reduceMotion) {
+    let parTick = false;
+    window.addEventListener('scroll', () => {
+      if (parTick) return;
+      parTick = true;
+      requestAnimationFrame(() => {
+        const y = Math.min(window.scrollY, window.innerHeight) * 0.12;
+        heroBgs.forEach(bg => { bg.style.transform = 'translate3d(0,' + y + 'px,0) scale(1.04)'; });
+        parTick = false;
+      });
+    }, { passive:true });
+  }
+
+  /* ---- Legal / cookie placeholders (no fabricated legal text) ---- */
+  document.querySelectorAll('[data-modal]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const which = el.getAttribute('data-modal');
+      const msg = {
+        imprint: 'Imprint (Impressum) — legal company details will be published here.',
+        privacy: 'Privacy Policy (Datenschutz) — the full data-protection notice will be published here.',
+        cookies: 'This site uses only essential, technical functionality. A full cookie-settings panel will be added here.'
+      }[which] || 'Coming soon.';
+      window.alert(msg);
+    });
+  });
+
+  /* ---- Contact form → EmailJS ---- */
+  const EMAILJS_PUBLIC_KEY  = 'SFKmL9X025sOUdgji';
+  const EMAILJS_SERVICE_ID  = 'service_8krxwld';
+  const EMAILJS_TEMPLATE_ID = 'template_im9z4en';
+
+  const form = document.getElementById('contactForm');
+  const note = document.getElementById('formNote');
+  const submitBtn = document.getElementById('formSubmit');
+  const field = (n) => form.elements[n];
+  const valOf = (n) => (field(n) && field(n).value ? field(n).value.trim() : '');
+  const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+  // Initialise the SDK once it has loaded (it is deferred)
+  function initEmailJS(){
+    if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    }
+  }
+  if (window.emailjs) initEmailJS();
+  else window.addEventListener('load', initEmailJS);
+
+  const ICON_OK  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>';
+  const ICON_ERR = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+
+  function setNote(type, msg){
+    note.classList.remove('is-success','is-error');
+    void note.offsetWidth;
+    if (type === 'success'){ note.classList.add('is-success'); note.innerHTML = ICON_OK + '<span>'+msg+'</span>'; }
+    else if (type === 'error'){ note.classList.add('is-error'); note.innerHTML = ICON_ERR + '<span>'+msg+'</span>'; }
+    else { note.textContent = msg; }
+  }
+
+  ['name','email','message'].forEach((n) => {
+    if (field(n)) field(n).addEventListener('input', () => field(n).classList.remove('is-invalid'));
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Honeypot: real users never fill the hidden #f-website input
+    if (valOf('website') !== '') return;
+
+    // Validation
+    const name = valOf('name'), email = valOf('email'), message = valOf('message');
+    field('name').classList.toggle('is-invalid', !name);
+    field('email').classList.toggle('is-invalid', !emailOk(email));
+    field('message').classList.toggle('is-invalid', !message);
+    if (!name || !emailOk(email) || !message){
+      setNote('error', 'Please complete all required fields with a valid email.');
+      return;
+    }
+
+    if (!window.emailjs || EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY' ||
+        EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID' || EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID'){
+      setNote('error', 'Email service is not configured yet. Please add your EmailJS keys.');
+      return;
+    }
+
+    submitBtn.classList.add('is-loading');
+    submitBtn.disabled = true;
+    setNote('', 'Sending…');
+    try {
+      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
+      setNote('success', 'Your inquiry has been sent successfully.');
+      form.reset();
+      form.querySelectorAll('.is-invalid').forEach((el) => el.classList.remove('is-invalid'));
+      setTimeout(() => { note.textContent = ''; note.classList.remove('is-success'); }, 7000);
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setNote('error', 'Something went wrong. Please try again or email us directly.');
+    } finally {
+      submitBtn.classList.remove('is-loading');
+      submitBtn.disabled = false;
+    }
+  });
+
+  /* ---- Our Presence: build the animated map overlay over images/map.jpg -------
+     Coordinates are PERCENTAGES of the image (x = left%, y = top%), derived from an
+     equirectangular projection over lon[-11..31], lat[34..71]. If a point doesn't sit
+     exactly on your map.jpg, just nudge its x/y here — nothing else needs to change.
+     side: 'r' (label right of dot) | 'l' (label left). key:true = always-visible label. */
+  const CITIES = [
+    { n:'Karlsruhe', x:46.2, y:59.4, key:true, hub:true },
+    { n:'London',     x:25.9, y:52.7, side:'l' },
+    { n:'Paris',      x:31.8, y:59.8, side:'l' },
+    { n:'Amsterdam',  x:37.9, y:50.3, side:'l' },
+    { n:'Brussels',   x:36.5, y:54.5, side:'l' },
+    { n:'Berlin',     x:58.1, y:50.0, side:'r' },
+    { n:'Prague',     x:60.5, y:56.5, side:'r' },
+    { n:'Vienna',     x:65.2, y:61.6, side:'r' },
+    { n:'Milan',      x:48.1, y:69.0, side:'l' },
+    { n:'Rome',       x:56.0, y:78.7, side:'r' },
+    { n:'Madrid',     x:17.4, y:82.7, side:'r' },
+    { n:'Copenhagen', x:56.1, y:41.4, side:'r' },
+    { n:'Stockholm',  x:69.2, y:31.5, side:'r' },
+    { n:'Oslo',       x:51.8, y:30.0, side:'l' },
+    { n:'Helsinki',   x:85.6, y:29.3, side:'l' },
+    { n:'Warsaw',     x:76.2, y:50.7, side:'r' },
+    { n:'Riga',       x:83.6, y:38.0, side:'r' },
+    { n:'Tallinn',    x:85.1, y:31.2, side:'r' },
+    { n:'Vilnius',    x:86.4, y:44.1, side:'r' },
+    { n:'Budapest',   x:71.5, y:63.5, side:'r' },
+    { n:'Bucharest',  x:88.3, y:71.8, side:'l' },
+    { n:'Sofia',      x:81.7, y:76.5, side:'l' },
+    { n:'Athens',     x:82.7, y:89.2, side:'l' }
+  ];
+
+  (function buildPresenceMap(){
+    const mapEl = document.getElementById('presenceMap');
+    const overlay = document.getElementById('presenceOverlay');
+    if (!mapEl || !overlay) return;
+
+    const hub = CITIES.find(c => c.hub) || CITIES[0];
+    const spokes = CITIES.filter(c => !c.hub);
+
+    // Reveal order: nearest cities first, so the markers appear to ripple outward
+    spokes.sort((a,b) => Math.hypot(a.x-hub.x, a.y-hub.y) - Math.hypot(b.x-hub.x, b.y-hub.y));
+
+    const STAGGER = 0.08;       // seconds between consecutive city markers
+
+    spokes.forEach((c, i) => {
+      const delay = 0.2 + i * STAGGER;
+
+      // City dot (HTML)
+      const dot = document.createElement('span');
+      dot.className = 'cdot';
+      dot.style.left = c.x + '%';
+      dot.style.top  = c.y + '%';
+      dot.style.animationDelay = delay.toFixed(2) + 's';
+      overlay.appendChild(dot);
+
+      // City label (HTML)
+      const label = document.createElement('span');
+      label.className = 'clabel ' + (c.side === 'l' ? 'clabel--l' : 'clabel--r') + (c.key ? ' clabel--key' : '');
+      label.textContent = c.n;
+      label.style.left = c.x + '%';
+      label.style.top  = c.y + '%';
+      label.style.transitionDelay = (delay + 0.1).toFixed(2) + 's';
+      overlay.appendChild(label);
+    });
+
+    // Karlsruhe hub: pulsing marker + prominent label
+    const ka = document.createElement('div');
+    ka.className = 'ka';
+    ka.style.left = hub.x + '%';
+    ka.style.top  = hub.y + '%';
+    ka.innerHTML = '<span class="ka__ring"></span><span class="ka__ring ka__ring--2"></span><span class="ka__core"></span>';
+    overlay.appendChild(ka);
+
+    const hubLabel = document.createElement('span');
+    hubLabel.className = 'clabel clabel--key ' + (hub.side === 'l' ? 'clabel--l' : 'clabel--r');
+    hubLabel.textContent = hub.n;
+    hubLabel.style.left = hub.x + '%';
+    hubLabel.style.top  = (hub.y + 5.5) + '%';   // sit just below the marker
+    overlay.appendChild(hubLabel);
+
+    // Start the animation once — only when the map scrolls into view
+    if ('IntersectionObserver' in window) {
+      const ob = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          mapEl.classList.add('is-live');
+          obs.disconnect();               // run only once
+        });
+      }, { threshold: 0.3 });
+      ob.observe(mapEl);
+    } else {
+      mapEl.classList.add('is-live');
+    }
+  })();
+
+  /* ---- Footer year ---- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
